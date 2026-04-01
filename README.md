@@ -1,10 +1,10 @@
-# 🌌 LearnX: The Futuristic Learning Ecosystem
+# LearnX: The Futuristic Learning Ecosystem
 
 Welcome to **LearnX**, a premium 2027-inspired EdTech platform designed for the next generation of digital learners. This platform combines high-end aesthetics, smooth motion design, and a robust interactive dashboard to provide an unparalleled learning experience.
 
 ---
 
-## 🎯 Platform Core Features
+## Technical Platform Core Features
 
 | Feature | Description | Technology |
 | :--- | :--- | :--- |
@@ -16,7 +16,7 @@ Welcome to **LearnX**, a premium 2027-inspired EdTech platform designed for the 
 
 ---
 
-## 🛠 Tech Stack Matrix
+## Tech Stack Matrix
 
 | Layer | Technology | Purpose |
 | :--- | :--- | :--- |
@@ -29,7 +29,7 @@ Welcome to **LearnX**, a premium 2027-inspired EdTech platform designed for the 
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 ### 1. High-Level App Flow
 ```mermaid
@@ -61,7 +61,7 @@ graph LR
 
 ---
 
-## 🎨 Design System Tokens
+## Design System Tokens
 
 | Token | HSL Value | Usage |
 | :--- | :--- | :--- |
@@ -72,7 +72,7 @@ graph LR
 
 ---
 
-## 🛣 User Journey Mapping
+## User Journey Mapping
 
 ### 3. Learning Pathway Flow
 ```mermaid
@@ -104,7 +104,7 @@ graph TD
 
 ---
 
-## 🚀 Animation Integration
+## Animation Integration
 
 | Component | Library | Specific Animation Effect |
 | :--- | :--- | :--- |
@@ -116,7 +116,7 @@ graph TD
 
 ---
 
-## 📂 Project Structure & Routing
+## Project Structure & Routing
 
 ### 5. Application Routing Graph
 ```mermaid
@@ -155,7 +155,7 @@ graph LR
 
 ---
 
-## 📥 Installation
+## Installation
 
 1. **Clone the repository**:
    ```bash
@@ -172,15 +172,15 @@ graph LR
 
 ---
 
-## 📜 Project Management Matrix
+## Project Management Matrix
 
 | Task | Status | Importance |
 | :--- | :--- | :--- |
-| **Design System** | Completed ✅ | Critical |
-| **Home Page** | Completed ✅ | High |
-| **Interactive Dashboard** | Completed ✅ | High |
-| **Live Background** | Completed ✅ | Medium |
-| **Certificates Vault** | Scheduled 🛠 | Low |
+| **Design System** | Completed | Critical |
+| **Home Page** | Completed | High |
+| **Interactive Dashboard** | Completed | High |
+| **Live Background** | Completed | Medium |
+| **Certificates Vault** | Scheduled | Low |
 
 ---
 
