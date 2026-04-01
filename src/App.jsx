@@ -13,6 +13,7 @@ import {
 } from 'react-icons/fa';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Dashboard from './pages/Dashboard';
 
 const faqItems = [
   {
@@ -440,14 +441,17 @@ function App() {
   };
 
   const isContactPage = pathname === '/contact';
+  const isDashboardPage = pathname === '/dashboard';
 
   return (
     <div className="relative isolate min-h-screen">
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(120deg,rgba(56,189,248,0.08),transparent_35%),linear-gradient(220deg,rgba(249,115,22,0.06),transparent_30%)]" />
 
-      <Navbar theme={theme} onToggleTheme={toggleTheme} />
+      {!isDashboardPage && <Navbar theme={theme} onToggleTheme={toggleTheme} />}
 
-      {isContactPage ? (
+      {isDashboardPage ? (
+        <Dashboard />
+      ) : isContactPage ? (
         <ContactPage
           errors={errors}
           formData={formData}
@@ -461,16 +465,18 @@ function App() {
         <HomePage />
       )}
 
-      <Footer />
+      {!isDashboardPage && <Footer />}
 
-      <button
-        type="button"
-        onClick={toggleTheme}
-        className="fixed bottom-5 right-5 z-40 hidden h-13 w-13 items-center justify-center rounded-full border border-[color:var(--border-soft)] bg-[color:var(--surface-card)] text-[color:var(--text-primary)] shadow-[var(--shadow-card)] transition duration-200 hover:-translate-y-0.5 sm:inline-flex"
-        aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-      >
-        {theme === 'light' ? <FaMoon /> : <FaSun />}
-      </button>
+      {!isDashboardPage && (
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className="fixed bottom-5 right-5 z-40 hidden h-13 w-13 items-center justify-center rounded-full border border-[color:var(--border-soft)] bg-[color:var(--surface-card)] text-[color:var(--text-primary)] shadow-[var(--shadow-card)] transition duration-200 hover:-translate-y-0.5 sm:inline-flex"
+          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        >
+          {theme === 'light' ? <FaMoon /> : <FaSun />}
+        </button>
+      )}
     </div>
   );
 }
