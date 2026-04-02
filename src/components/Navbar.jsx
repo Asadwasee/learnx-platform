@@ -3,6 +3,7 @@ import { FaBars, FaMoon, FaSun, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
   { name: 'Home', href: '/' },
+  { name: 'Courses', href: '/courses' },
   { name: 'Dashboard', href: '/dashboard' },
   { name: 'Contact', href: '/contact' },
   { name: 'FAQs', href: '/contact#faqs' },

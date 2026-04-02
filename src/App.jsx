@@ -14,6 +14,8 @@ import {
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Dashboard from './pages/Dashboard';
+import HomePage from './pages/HomePage';
+import CoursesPage from './pages/CoursesPage';
 
 const faqItems = [
   {
@@ -76,17 +78,7 @@ const softPanelClass =
 const fieldBaseClass =
   'w-full rounded-2xl border border-[color:var(--border-soft)] bg-[color:var(--surface-soft)] px-4 py-4 text-[color:var(--text-primary)] outline-none transition focus:border-cyan-400/60 focus:ring-4 focus:ring-cyan-400/10 placeholder:text-[color:var(--text-muted)]';
 
-function HomePage() {
-  return (
-    <main className="pt-24">
-      <h1 className="mt-10 text-center text-4xl font-bold text-[color:var(--text-primary)]">
-        Welcome to LearnX
-      </h1>
-    </main>
-  );
-}
-
-function ContactPage({
+function ContactPageWithForm({
   errors,
   formData,
   handleChange,
@@ -442,6 +434,7 @@ function App() {
 
   const isContactPage = pathname === '/contact';
   const isDashboardPage = pathname === '/dashboard';
+  const isCoursesPage = pathname === '/courses';
 
   return (
     <div className="relative isolate min-h-screen">
@@ -451,8 +444,10 @@ function App() {
 
       {isDashboardPage ? (
         <Dashboard />
+      ) : isCoursesPage ? (
+        <CoursesPage />
       ) : isContactPage ? (
-        <ContactPage
+        <ContactPageWithForm
           errors={errors}
           formData={formData}
           handleChange={handleChange}
