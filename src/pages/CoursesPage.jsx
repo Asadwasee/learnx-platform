@@ -13,7 +13,7 @@ const coursesData = [
     reviews: 2341,
     level: 'Intermediate',
     category: 'Web Development',
-    thumbnail: '🚀',
+    thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&auto=format&fit=crop&q=60',
     price: '$79',
     students: 12500,
     description: 'Master React with real-world projects and modern hooks patterns.',
@@ -27,7 +27,7 @@ const coursesData = [
     reviews: 1856,
     level: 'Intermediate',
     category: 'AI & Machine Learning',
-    thumbnail: '🧠',
+    thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=60',
     price: '$89',
     students: 8900,
     description: 'Start your AI journey with Python, TensorFlow, and practical ML projects.',
@@ -41,7 +41,7 @@ const coursesData = [
     reviews: 1243,
     level: 'Beginner',
     category: 'UI/UX Design',
-    thumbnail: '🎨',
+    thumbnail: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&auto=format&fit=crop&q=60',
     price: '$69',
     students: 6200,
     description: 'Learn design principles, Figma, and create stunning user experiences.',
@@ -55,7 +55,7 @@ const coursesData = [
     reviews: 3012,
     level: 'Intermediate',
     category: 'Web Development',
-    thumbnail: '⚡',
+    thumbnail: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&auto=format&fit=crop&q=60',
     price: '$84',
     students: 15000,
     description: 'Build complete web applications with Node.js, Express, and React.',
@@ -69,7 +69,7 @@ const coursesData = [
     reviews: 2156,
     level: 'Advanced',
     category: 'AI & Machine Learning',
-    thumbnail: '📊',
+    thumbnail: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&auto=format&fit=crop&q=60',
     price: '$79',
     students: 9800,
     description: 'Advanced data analysis, visualization, and statistical modeling with Python.',
@@ -83,7 +83,7 @@ const coursesData = [
     reviews: 1678,
     level: 'Beginner',
     category: 'UI/UX Design',
-    thumbnail: '🖼️',
+    thumbnail: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=60',
     price: '$49',
     students: 11200,
     description: 'Learn the fundamentals of web design, color theory, and typography.',
@@ -97,7 +97,7 @@ const coursesData = [
     reviews: 892,
     level: 'Advanced',
     category: 'Web Development',
-    thumbnail: '📘',
+    thumbnail: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&auto=format&fit=crop&q=60',
     price: '$74',
     students: 4500,
     description: 'Master advanced TypeScript patterns and type system features.',
@@ -111,7 +111,7 @@ const coursesData = [
     reviews: 1234,
     level: 'Advanced',
     category: 'AI & Machine Learning',
-    thumbnail: '🤖',
+    thumbnail: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&auto=format&fit=crop&q=60',
     price: '$99',
     students: 5600,
     description: 'Build neural networks and deep learning models with TensorFlow and Keras.',
@@ -125,7 +125,7 @@ const coursesData = [
     reviews: 3456,
     level: 'Beginner',
     category: 'Web Development',
-    thumbnail: '🏗️',
+    thumbnail: 'https://images.unsplash.com/photo-1621839673705-6617adf9e890?w=800&auto=format&fit=crop&q=60',
     price: '$39',
     students: 28900,
     description: 'Learn HTML5 and CSS3 from scratch with modern best practices.',
@@ -139,7 +139,7 @@ const coursesData = [
     reviews: 1567,
     level: 'Intermediate',
     category: 'UI/UX Design',
-    thumbnail: '📱',
+    thumbnail: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=60',
     price: '$64',
     students: 7800,
     description: 'Design beautiful mobile apps with responsive layouts and user-centered design.',
@@ -153,7 +153,7 @@ const coursesData = [
     reviews: 945,
     level: 'Intermediate',
     category: 'Web Development',
-    thumbnail: '🟢',
+    thumbnail: 'https://images.unsplash.com/photo-1618477247222-acbdb0e159b3?w=800&auto=format&fit=crop&q=60',
     price: '$72',
     students: 5200,
     description: 'Master Vue.js 3 with composition API and real-world projects.',
@@ -167,7 +167,7 @@ const coursesData = [
     reviews: 734,
     level: 'Advanced',
     category: 'AI & Machine Learning',
-    thumbnail: '👁️',
+    thumbnail: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&auto=format&fit=crop&q=60',
     price: '$94',
     students: 3900,
     description: 'Learn image processing and computer vision with OpenCV and Python.',
@@ -217,7 +217,8 @@ function CourseCard({ course }) {
       {/* Thumbnail */}
       <div className="relative h-48 bg-linear-to-br from-sky-500 via-cyan-400 to-emerald-500 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.3),transparent)]" />
-        <div className="relative text-6xl">{course.thumbnail}</div>
+        {/* Only replaced the div with img tag to show the image link */}
+        <img src={course.thumbnail} alt={course.title} className="h-full w-full object-cover" />
       </div>
 
       {/* Content */}
@@ -327,7 +328,7 @@ export default function CoursesPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className={badgeClass}>
-              📚 Explore Our Courses
+               Explore Our Courses
             </div>
             <h1 className="mt-6 text-4xl font-bold text-[color:var(--text-primary)] sm:text-5xl lg:text-6xl">
               Find Your Next

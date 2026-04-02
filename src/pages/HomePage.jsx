@@ -107,7 +107,7 @@ const testimonials = [
     content:
       'LearnX transformed my career. The React course was incredibly thorough and the instructor made everything crystal clear. Highly recommended!',
     rating: 5,
-    avatar: '👨‍💼',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop',
   },
   {
     id: 2,
@@ -116,7 +116,7 @@ const testimonials = [
     content:
       'The UI/UX course gave me practical skills I use every day. The project-based learning approach is fantastic and you actually build real things.',
     rating: 5,
-    avatar: '👩‍🎨',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
   },
   {
     id: 3,
@@ -125,7 +125,7 @@ const testimonials = [
     content:
       'Finally, a platform that explains machine learning concepts in a way that makes sense. Best investment I made in my learning journey.',
     rating: 5,
-    avatar: '👨‍🔬',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop',
   },
   {
     id: 4,
@@ -134,7 +134,7 @@ const testimonials = [
     content:
       'The Full-Stack course is comprehensive and up-to-date. Landed my first dev job within 3 months of completing the bootcamp.',
     rating: 5,
-    avatar: '👩‍💻',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop',
   },
 ];
 
@@ -146,7 +146,7 @@ const instructors = [
     bio: 'Senior Software Engineer with 10+ years of experience at tech giants.',
     courses: 8,
     students: 45000,
-    avatar: '👩‍🏫',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop',
     color: 'from-sky-500 to-blue-600',
   },
   {
@@ -156,7 +156,7 @@ const instructors = [
     bio: 'PhD in Computer Science, published researcher in deep learning.',
     courses: 6,
     students: 28000,
-    avatar: '👨‍🎓',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop',
     color: 'from-violet-500 to-purple-600',
   },
   {
@@ -166,7 +166,7 @@ const instructors = [
     bio: 'Award-winning designer and creative director at leading design studios.',
     courses: 5,
     students: 22000,
-    avatar: '👩‍🎨',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop',
     color: 'from-emerald-500 to-teal-600',
   },
 ];
@@ -191,8 +191,13 @@ function HeroSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           {/* Badge */}
-          <div className={badgeClass}>
-            ✨ Welcome to LearnX Academy
+          <div className={`${badgeClass} flex items-center gap-2`}>
+            <img 
+                src="https://img.icons8.com/emoji/48/sparkles.png" 
+                alt="sparkle" 
+                className="h-4 w-4"
+            />
+            Welcome to LearnX Academy
           </div>
 
           {/* Main Heading */}
@@ -433,7 +438,11 @@ function TestimonialCard({ testimonial }) {
 
       {/* Author */}
       <div className="mt-auto flex items-center gap-3 border-t border-[color:var(--border-soft)] pt-4">
-        <div className="text-2xl">{testimonial.avatar}</div>
+        <img 
+            src={testimonial.avatar} 
+            alt={testimonial.name} 
+            className="h-10 w-10 rounded-full object-cover ring-2 ring-[color:var(--border-soft)]"
+        />
         <div>
           <h4 className="font-semibold text-[color:var(--text-primary)]">
             {testimonial.name}
@@ -481,13 +490,17 @@ function InstructorCard({ instructor }) {
       {/* Header */}
       <div className={`bg-linear-to-br ${instructor.color} relative h-32 p-6`}>
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.3),transparent)]" />
-        <div className="relative text-center">
-          <div className="text-5xl">{instructor.avatar}</div>
+        <div className="relative flex justify-center translate-y-8">
+          <img 
+            src={instructor.avatar} 
+            alt={instructor.name} 
+            className="h-24 w-24 rounded-full border-4 border-[color:var(--surface-card)] object-cover shadow-xl"
+          />
         </div>
       </div>
 
       {/* Content */}
-      <div className="space-y-4 p-6">
+      <div className="space-y-4 p-6 pt-12">
         <div className="text-center">
           <h3 className="text-lg font-bold text-[color:var(--text-primary)]">
             {instructor.name}
